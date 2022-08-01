@@ -16,13 +16,14 @@ import java.util.concurrent.Executors;
 @SpringBootApplication
 public class TestPrimeaspectApplication {
 
+    private static final String URL = "https://restcountries.com/v2/alpha?codes=";
     private static final String LOCAL_DIRECTORY = "/tmp/countries/flags/";
     private static final String FORMAT_SVG = ".svg";
     private static final String FORMAT_PNG = ".png";
 
     public static void main(String[] args) {
         SpringApplication.run(TestPrimeaspectApplication.class, args);
-        StringBuilder url = new StringBuilder("https://restcountries.com/v2/alpha?codes=");
+        StringBuilder url = new StringBuilder(URL);
         for (String s : args) {
             url.append(s).append(",");
         }
